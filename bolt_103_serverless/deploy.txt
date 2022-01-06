@@ -1,0 +1,14 @@
+Service Information
+service: serverless-aws-lambda-receiver-bolt-js
+stage: dev
+region: us-east-1
+stack: serverless-aws-lambda-receiver-bolt-js-dev
+resources: 12
+api keys:
+  None
+endpoints:
+  POST - https://uqtxtu641l.execute-api.us-east-1.amazonaws.com/dev/slack/events
+functions:
+  slack: serverless-aws-lambda-receiver-bolt-js-dev-slack
+layers:
+  None

@@ -1,0 +1,17 @@
+service: cron
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  profile: ${opt:profile}
+  stage: dev
+
+functions:
+  cron:
+    handler: src/slack.notify
+    events:
+      - http:
+          path: notify
+          method: GET
+      - schedule: rate(10 minutes)
+    memorySize: 128
