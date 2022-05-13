@@ -3,9 +3,11 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: nodejs12.x
+  stage: prd # Default stage to be used. Default is "dev"
   environment:
     SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
     SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+  lambdaHashingVersion: 20201221
 functions:
   slack:
     handler: app.handler
