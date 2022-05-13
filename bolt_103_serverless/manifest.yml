@@ -1,0 +1,35 @@
+display_information:
+  name: KeepSlack_Serverless
+features:
+  bot_user:
+    display_name: KeepSlack_Serverless
+    always_online: false
+  slash_commands:
+    - command: /ks-star
+      url: https://6e447u2672.execute-api.us-east-1.amazonaws.com/prod/slack/events
+      description: Give stars to your co-workers
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - commands
+      - users:read
+      - users:read.email
+      - chat:write
+      - channels:history
+      - channels:read
+      - chat:write.customize
+      - groups:history
+      - groups:read
+      - im:history
+      - im:read
+      - mpim:history
+      - mpim:read
+      - incoming-webhook
+settings:
+  interactivity:
+    is_enabled: true
+    request_url: https://aa9b-2800-810-40e-836-47f-59f1-d273-78ca.sa.ngrok.io/slack/events
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

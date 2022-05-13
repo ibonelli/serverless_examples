@@ -44,6 +44,12 @@ app.message('hello', async ({ message, say }) => {
   });
 });
 
+// Listens to incoming messages that contain "goodbye"
+app.message('goodbye', async ({ message, say }) => {
+  // say() sends a message to the channel where the event was triggered
+  await say(`See ya later, <@${message.user}> :wave:`);
+});
+
 // Listens for an action from a button click
 app.action('button_click', async ({ body, ack, say }) => {
   await ack();
